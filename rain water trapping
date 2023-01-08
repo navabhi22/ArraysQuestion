@@ -1,4 +1,4 @@
-// two array (left max and right max ) approach
+// two array (left max and right max ) approach , complexity time = O(n), space = O(n)
 class Solution {
     public int trap(int[] height) {
         int n =height.length;
