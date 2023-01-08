@@ -1,0 +1,26 @@
+// two array (left max and right max ) approach
+class Solution {
+    public int trap(int[] height) {
+        int n =height.length;
+        int[] l = new int[n];
+        int[] r = new int[n];
+        int lmax=0;
+        int rmax=0;
+        for(int i=0; i<n;i++){
+            l[i]=lmax;
+            lmax=Math.max(height[i],lmax);
+            r[n-i-1]=rmax;
+            rmax=Math.max(height[n-i-1],rmax);
+           
+        } 
+        int totWater=0;
+        for(int i=0; i<n;i++){
+            int currWater=Math.min(l[i],r[i]);
+            currWater=currWater-height[i];
+            if(currWater>0){
+                totWater=totWater+currWater;
+            }    
+        }
+        return totWater;
+    }
+}
