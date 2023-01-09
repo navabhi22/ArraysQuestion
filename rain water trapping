@@ -1,3 +1,24 @@
+//brute force approach computin left max and right max of curr index to check filled water, complexity time =O(n^2), space = O(1)
+class Solution {
+    public int trap(int[] height) {
+        int n =height.length;
+        
+        int ans=0;
+        for(int i=1; i<n;i++){
+            int lmax=0;
+            int rmax=0;
+            for(int j=i;j>=0;j--){
+                lmax=Math.max(lmax,height[j]);
+            }
+            for(int j=i; j<n;j++){
+                rmax=Math.max(rmax,height[j]);
+            }
+            ans = ans + Math.min(lmax,rmax)-height[i];
+        }
+        return ans;
+    }
+}
+
 // two array (left max and right max ) approach , complexity time = O(n), space = O(n)
 class Solution {
     public int trap(int[] height) {
