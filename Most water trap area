@@ -36,7 +36,7 @@ public class Main {
         }
         System.out.println(trap(arr,n));
     }
-    //efficent approach
+    //efficent approach O(n)
     public static int trap(int[] arr, int n){
         int max=0;
         int i=0; int j=n-1;
@@ -51,7 +51,7 @@ public class Main {
         }
         return max;
     }
-    //brute force
+    //brute force O(n^2)
     public static int water(int[] arr, int n){
         int max = 0;
         for(int i=0; i<n;i++){
